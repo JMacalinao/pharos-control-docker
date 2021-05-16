@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+    pharos-control:
+        controlle_name: pharos-control
+        image: jmacalinao/docker-pharos-control
+        restart: always
+        ports:
+            - 9321:9321
+        volumes:
+            - pharos-conf:/opt/pharoscontrol/conf
+            - pharos-db:/opt/pharoscontrol/db
+            - pharos-logs:/opt/pharoscontrol/logs
+
+volumes:
+    pharos-conf:
+    pharos-db:
+    pharos-logs:

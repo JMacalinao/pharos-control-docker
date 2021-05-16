@@ -8,5 +8,6 @@ RUN wget https://static.tp-link.com/2019/201905/20190508/PharosControl2.0.2_linu
     unzip Pharos*.zip && \
     cd PharosControl2.0.2_linux && \
     dpkg -i PharosControl-2.0.2-ub14.noarch.deb
+RUN mkdir /var/lock/subsys
 
 ENTRYPOINT ["/etc/init.d/pharoscontrol", "start"]
