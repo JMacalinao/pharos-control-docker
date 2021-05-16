@@ -11,6 +11,7 @@ RUN apt-get update && \
     unzip Pharos*.zip && \
     cd PharosControl2.0.2_linux && \
     dpkg -i PharosControl-2.0.2-ub14.noarch.deb && \
+    cp -R /opt/pharoscontrol/db /app && \
     mkdir /var/lock/subsys && \
     useradd -m pharoscontrol
 
