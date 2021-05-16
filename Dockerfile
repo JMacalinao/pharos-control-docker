@@ -1,6 +1,8 @@
 FROM ubuntu:18.04 as build
 
-WORKDIR /install
+WORKDIR /app
+
+COPY entrypoint.sh .
 
 RUN apt-get update && \
     apt-get install -y wget unzip openjdk-8-jre-headless && \
@@ -10,10 +12,9 @@ RUN apt-get update && \
     dpkg -i PharosControl-2.0.2-ub14.noarch.deb && \
     mkdir /var/lock/subsys && \
     useradd -m pharoscontrol && \
-    chown -R pharoscontrol:pharoscontrol /opt/pharoscontrol/db
 
 USER pharoscontrol
 
 WORKDIR /opt/pharoscontrol
 
-ENTRYPOINT ["/usr/bin/java", "-cp", "/opt/pharoscontrol/lib/*", "com.tplink.hipap.server.backend.PharosControlHeadless"]
+ENTRYPOINT ["/app/entrypoint.sh"]
