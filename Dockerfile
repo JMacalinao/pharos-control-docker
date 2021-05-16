@@ -3,6 +3,7 @@ FROM ubuntu:18.04 as build
 WORKDIR /app
 
 COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
 
 RUN apt-get update && \
     apt-get install -y wget unzip openjdk-8-jre-headless && \
