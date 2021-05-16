@@ -2,7 +2,7 @@ version: "3"
 
 services:
     pharos-control:
-        controlle_name: pharos-control
+        controller_name: pharos-control
         image: jmacalinao/docker-pharos-control
         restart: always
         ports:
