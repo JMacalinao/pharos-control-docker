@@ -11,7 +11,7 @@ RUN apt-get update && \
     cd PharosControl2.0.2_linux && \
     dpkg -i PharosControl-2.0.2-ub14.noarch.deb && \
     mkdir /var/lock/subsys && \
-    useradd -m pharoscontrol && \
+    useradd -m pharoscontrol
 
 USER pharoscontrol
 
