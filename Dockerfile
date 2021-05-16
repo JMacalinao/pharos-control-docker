@@ -1,0 +1,13 @@
+FROM ubuntu:18.04 as build
+
+ARG PHAROS_DL="https://static.tp-link.com/2019/201905/20190508/PharosControl2.0.2_linux.zip" \
+    PHAROS_PORT="9321"
+
+WORKDIR /install
+
+RUN apt-get update && \
+    apt-get install curl openjdk-8-jre-headless -y && \
+    curl -Ss -L https://static.tp-link.com/2019/201905/20190508/PharosControl2.0.2_linux.zip | jar xv && \
+    dpkg -i PharosControl-2.0.2-ub14.noarch.deb
+
+ENTRYPOINT ["/etc/init.d/pharoscontrol", "start"]
