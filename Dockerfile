@@ -12,4 +12,4 @@ RUN apt-get update && \
 
 WORKDIR /opt/pharoscontrol
 
-ENTRYPOINT ["/usr/bin/java", "-server", "-Xms128m", "-Xmx1024m", "-XX:MaxHeapFreeRatio=60", "-XX:MinHeapFreeRatio=30", "-XX:+HeapDumpOnOutOfMemoryError", "-cp", "/opt/pharoscontrol/lib/*", "com.tplink.hipap.server.backend.PharosControlHeadless"]
+ENTRYPOINT ["/usr/bin/java", "-cp", "/opt/pharoscontrol/lib/*", "com.tplink.hipap.server.backend.PharosControlHeadless"]
