@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 as build
+FROM debian:stable as build
 
 ARG PHAROS_DL="https://static.tp-link.com/2019/201905/20190508/PharosControl2.0.2_linux.zip"
 ARG PHAROS_PORT="9321"
