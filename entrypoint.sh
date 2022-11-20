@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ ! -f /opt/pharoscontrol/conf ]]; then
+if [[ ! -d /opt/pharoscontrol/conf ]]; then
     ln -s /app/config/conf /opt/pharoscontrol/conf
 fi
-if [[ ! -f /opt/pharoscontrol/db ]]; then
+if [[ ! -d /opt/pharoscontrol/db ]]; then
     ln -s /app/config/db /opt/pharoscontrol/db
 fi
 

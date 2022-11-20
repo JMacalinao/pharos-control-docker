@@ -3,16 +3,12 @@ version: "3"
 services:
     pharos-control:
         container_name: pharos-control
-        image: jmacalinao/pharos-control-docker
+        image: ghcr.io/jmacalinao/pharos-control-docker:master
         restart: always
         ports:
             - 9321:9321
         volumes:
-            - pharos-conf:/opt/pharoscontrol/conf
-            - pharos-db:/opt/pharoscontrol/db
-            - pharos-logs:/opt/pharoscontrol/logs
+            - pharos-config:/app/config
 
 volumes:
-    pharos-conf:
-    pharos-db:
-    pharos-logs:
+    pharos-config:
