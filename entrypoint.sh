@@ -1,10 +1,10 @@
 #!/bin/bash
 
 if [[ ! -f /opt/pharoscontrol/conf ]]; then
-    cp -R /app/conf/. /opt/pharoscontrol/conf
+    ln -s /app/conf /opt/pharoscontrol/conf
 fi
 if [[ ! -f /opt/pharoscontrol/db ]]; then
-    cp -R /app/db/. /opt/pharoscontrol/db
+    ln -s /app/db /opt/pharoscontrol/db
 fi
 
 chown -R pharoscontrol:pharoscontrol /opt/pharoscontrol/conf
