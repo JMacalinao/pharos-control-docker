@@ -2,7 +2,7 @@
 
 if [[ ! -d /app/config/conf ]]; then
     mv /opt/pharoscontrol/conf /app/config/conf
-    ln -s /opt/pharoscontrol/conf
+    ln -s /app/config/conf /opt/pharoscontrol/conf
 fi
 if [[ ! -d /app/config/db ]]; then
     mv /opt/pharoscontrol/db /app/config/db
