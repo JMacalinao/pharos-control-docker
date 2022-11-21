@@ -3,7 +3,7 @@ version: "3"
 services:
     pharos-control:
         container_name: pharos-control
-        image: ghcr.io/jmacalinao/pharos-control-docker:master
+        image: ghcr.io/jmacalinao/pharos-control-docker
         restart: always
         ports:
             - 9321:9321
