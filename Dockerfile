@@ -7,8 +7,6 @@ RUN apt-get update && \
     cd PharosControl2.0.2_linux && \
     dpkg -i PharosControl-2.0.2-ub14.noarch.deb && \
     mkdir -p /app/config && \
-    mv /opt/pharoscontrol/conf /app/config && \
-    mv /opt/pharoscontrol/db /app/config && \
     mkdir /var/lock/subsys && \
     useradd -m pharoscontrol
 
