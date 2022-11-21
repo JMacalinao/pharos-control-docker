@@ -1,9 +1,4 @@
-FROM ubuntu:18.04 as build
-
-WORKDIR /app
-
-COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
+FROM ubuntu:20.04
 
 RUN apt-get update && \
     apt-get install -y wget unzip openjdk-8-jre-headless gosu && \
@@ -17,7 +12,10 @@ RUN apt-get update && \
     mkdir /var/lock/subsys && \
     useradd -m pharoscontrol
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
+
 WORKDIR /opt/pharoscontrol
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/java", "-cp", "/opt/pharoscontrol/lib/*", "com.tplink.hipap.server.backend.PharosControlHeadless"]
